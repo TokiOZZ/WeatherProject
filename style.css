@@ -1,0 +1,32 @@
+body {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 5vh;
+}
+
+.header-container {
+    display: flex;
+}
+.logo-wrap {
+    /* text-align: center; */
+    /* margin: auto; */
+    margin: auto 0;
+}
+.logo {
+    width: 2em;
+    height: auto;
+}
+.nav {
+    font-size: 1em;
+    display: flex;
+    padding: 0px;
+    margin-left: 4vh;
+}
+li {
+    list-style: none;
+}
+.nav__item {
+    margin-left: 2vh;
+}
+.city-select{
+    min-width: 8em;
+}
