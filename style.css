@@ -2,31 +2,39 @@ body {
     font-family: 'Patrick Hand', cursive;
     font-size: 5vh;
 }
-
-.header-container {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-}
-.logo-wrap {
-    /* text-align: center; */
-    /* margin: auto; */
-    margin: auto 0;
 }
 .logo {
-    width: 2em;
-    height: auto;
+    height: 5em;
 }
-.nav {
-    font-size: 1em;
+.city-select {
+    margin-left: 2em;
     display: flex;
-    padding: 0px;
-    margin-left: 4vh;
+    align-items: center;
+}
+p {
+   margin: 0; 
+}
+.city-select__custom-select {
+    margin-left: 0.5em;
+    position: static;
+}
+.city-option{
+    border: 2px solid tomato;
+    position: relative;
+    top: 6em;
+
+}
+.city-option:not(:last-child)  {
+    margin-bottom: 0.25em;
+}
+.disabled {
+    display: none;
 }
 li {
     list-style: none;
 }
-.nav__item {
-    margin-left: 2vh;
-}
-.city-select{
-    min-width: 8em;
-}
+

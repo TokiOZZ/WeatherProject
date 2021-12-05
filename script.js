@@ -11,26 +11,43 @@ const param = {
         5128581 : 'New York',
     }
 };
+
+getCityList();
+
 function getWeather () {
     
 }
 
-function createElem (elem, styleClass, cityName, valueRes) {
+
+function createElem (elem, styleClass, cityName, dataValue) {
     let elemCreated = document.createElement(elem);
     if (styleClass) elemCreated.className = styleClass;
-    if (valueRes) elemCreated.value = valueRes;
+    if (dataValue) elemCreated.value = dataValue;
     if (cityName) elemCreated.textContent = cityName;
     return elemCreated;
 }
 
-document.querySelector('.city-select').onclick = getCityList;
+document.querySelector('#city').addEventListener('click', activateCityList);
 
 function getCityList () {
-    if (document.querySelectorAll('.city-option').length > 0 ) {
-        let cityOption = document.querySelectorAll('.city-option');
-        let cityOptionArr = [...cityOption];
-        cityOptionArr.forEach(elem => elem.remove());
-    }    for (let key in param.cities) {
-        this.appendChild(createElem('option', 'city-option', param.cities[key], key));
+
+    for (let key in param.cities) {
+        let citySelect = document.querySelector('.city-select__custom-select');
+        let cityOption = citySelect.appendChild(createElem('div', 'city-option', param.cities[key], key));
+        cityOption.classList.add('disabled');
     }
 }
+
+function styleClassToggle (elem, styleClass) {
+    elem.classList.toggle(styleClass);
+}
+
+function activateCityList () {
+    const cityOption = document.querySelectorAll('.city-option');   
+    console.log(cityOption);
+    cityOption.forEach(elem => {
+        styleClassToggle(elem, 'disabled');
+    });
+
+}
+
