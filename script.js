@@ -21,9 +21,9 @@ function getWeather () {
 
 function createElem (elem, styleClass, cityName, dataValue) {
     let elemCreated = document.createElement(elem);
-    if (styleClass) elemCreated.className = styleClass;
-    if (dataValue) elemCreated.value = dataValue;
-    if (cityName) elemCreated.textContent = cityName;
+    elemCreated.className = styleClass;
+    elemCreated.value = dataValue;
+    elemCreated.textContent = cityName;
     return elemCreated;
 }
 
@@ -31,20 +31,45 @@ document.querySelector('#city').addEventListener('click', activateCityList);
 
 function getCityList () {
 
-    for (let key in param.cities) {
-        let citySelect = document.querySelector('.city-select__custom-select');
-        let cityOption = citySelect.appendChild(createElem('div', 'city-option', param.cities[key], key));
+// Create inside 'custom select'
+
+    // for (let key in param.cities) {
+    //     let citySelect = document.querySelector('.city-select__custom-select');
+    //     let cityOption = citySelect.appendChild(createElem('div', 'city-option', param.cities[key], key));
+    //     cityOption.classList.add('disabled');
+    // }
+
+// Create after 'custom select'
+    let cityOptionWrap = document.createElement('div');
+    cityOptionWrap.classList.add('city-option-wrap');
+    document.querySelector('.city-select').appendChild(cityOptionWrap);
+    
+        for (let key in param.cities) {
+        let cityOption = cityOptionWrap.appendChild(createElem('div', 'city-option', param.cities[key], key));
         cityOption.classList.add('disabled');
     }
+
 }
+
+document.querySelector('.city-option-wrap').addEventListener('click', (event) => {
+    const cityCheckedName = event.target.textContent;
+    document.querySelector('.city-select__custom-select').textContent = cityCheckedName;
+    document.querySelector('.city-option-wrap').classList.toggle('disabled');
+});
 
 function styleClassToggle (elem, styleClass) {
     elem.classList.toggle(styleClass);
 }
 
 function activateCityList () {
-    const cityOption = document.querySelectorAll('.city-option');   
-    console.log(cityOption);
+    if (document.querySelector('.city-option-wrap').classList.contains('disabled')) {
+        console.log(123123131);
+        document.querySelector('.city-option-wrap').classList.remove('disabled')
+        cityOption.forEach(elem => {
+            styleClassToggle(elem, 'disabled');
+        });
+    }
+    let cityOption = document.querySelectorAll('.city-option');   
     cityOption.forEach(elem => {
         styleClassToggle(elem, 'disabled');
     });
