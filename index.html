@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Weather Forecast</title>
 </head>
@@ -23,16 +25,19 @@
            </div>
     </header>
     <main class="main">
-        <div class="main-container">
-            <div class="main-img-wrap">
-                <img src="#" alt="weather picture">
+        <div class="container">
+            <div class="weather-img-wrap">
+                <img src="#" alt="weather picture" class="weather-img">
+            </div>
+            <div class="temperature">
+
             </div>
             <ul class="weather-list">
-                <li class="weather-list__item"></li>
-                <li class="weather-list__item"></li>
-                <li class="weather-list__item"></li>
-                <li class="weather-list__item"></li>
-                <li class="weather-list__item"></li>
+                <li class="weather-list__item feels-like"></li>
+                <li class="weather-list__item max-t">Max t: </li>
+                <li class="weather-list__item min-t">Min t:</li>
+                <li class="weather-list__item pressure">Pressure</li>
+                <li class="weather-list__item humidity">humidity: </li>
             </ul>
         </div>
     </main>

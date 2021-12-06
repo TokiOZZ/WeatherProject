@@ -40,6 +40,6 @@ li {
 
 
 
-.container, .city-select, .city-select__custom-select,.city-select__text {
+ul, li, .container, .city-select, .city-select__custom-select,.city-select__text {
     border: 3px dotted greenyellow;
 }

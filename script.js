@@ -1,5 +1,5 @@
 const param = {
-	'url' : 'https://api.openweathermap.org/data/2.5/forecast',
+	'url' : 'https://api.openweathermap.org/data/2.5/weather?units=metric',
 	'appId' : '6bc3980afdf8ce4cc51849c306ecaa8b',
     'cities': {
         703448 : 'Kyiv',
@@ -16,13 +16,22 @@ getCityList();
 
 function getWeather () {
     const cityId = document.querySelector('.city-select__custom-select').getAttribute('value');
-    fetch(`${param.url}?id=${cityId}&appid=${param.appId}`)
+    fetch(`${param.url}&id=${cityId}&appid=${param.appId}`)
     .then(weather => weather.json())
     .then(data => showWeather(data));
 }
 
 function showWeather (data) {
     console.log(data);
+    document.querySelector('.weather-img').setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+    document.querySelector('.temperature').textContent = `${Math.floor(data.main.temp)} °C`;
+    document.querySelector('.feels-like').textContent = `Feels like: ${Math.floor(data.main['feels_like'])} °C`;
+    document.querySelector('.max-t').textContent = `Max temp. ${Math.round(data.main['temp_max'])} °C`;
+    document.querySelector('.min-t').textContent = `Min temp. ${Math.floor(data.main['temp_max'])} °C`;
+    document.querySelector('.pressure').textContent = `Pressure ${Math.floor(data.main.pressure)} hPa`;
+    document.querySelector('.humidity').textContent = `Humidity ${Math.floor(data.main.humidity)} %`;
+
+
 }
 
 
