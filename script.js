@@ -13,9 +13,11 @@ const param = {
 };
 
 getCityList();
+getWeather();
 
 function getWeather () {
     const cityId = document.querySelector('.city-select__custom-select').getAttribute('value');
+    console.log(cityId);
     fetch(`${param.url}&id=${cityId}&appid=${param.appId}`)
     .then(weather => weather.json())
     .then(data => showWeather(data));

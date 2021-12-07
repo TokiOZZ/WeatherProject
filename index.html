@@ -13,25 +13,28 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo-wrap">
-            <img src="logo.jpg" alt="logo" class="logo">
-            </div>
-            <div class="city-select">
-                <p class="city-select__text">Choose your city:</p>
-                <div id="city" class="city-select__custom-select">
-                    Click on me!
-                </div>
-            </div>
-           </div>
+           <h1 class="header_title">
+               Weather project
+           </h1>
+        </div>
     </header>
     <main class="main">
         <div class="container">
-            <div class="weather-img-wrap">
-                <img src="#" alt="weather picture" class="weather-img">
-            </div>
-            <div class="temperature">
+            <div class="weather-wrap">
+                <img src="logo.jpg" alt="weather picture" class="weather-img">
+               <div class="flex-wrap">
+                <div class="temperature">
 
+                </div>
+                <div class="city-select">
+                    <div id="city" class="city-select__custom-select" value="703448">
+                        Kyiv
+                    </div>
+                </div>
             </div>
+            </div>
+            
+          
             <ul class="weather-list">
                 <li class="weather-list__item feels-like">Feels-like</li>
                 <li class="weather-list__item max-t">Max t: </li>
@@ -39,6 +42,7 @@
                 <li class="weather-list__item pressure">Pressure</li>
                 <li class="weather-list__item humidity">humidity: </li>
             </ul>
+            
         </div>
     </main>
 
