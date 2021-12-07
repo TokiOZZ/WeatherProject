@@ -11,6 +11,7 @@ body {
     height: 5em;
 }
 .city-select {
+    position: relative;
     margin-top: 1.5em;
     margin-left: 2em;
     display: flex;
@@ -26,12 +27,17 @@ p {
 .city-option{
     border: 2px solid tomato;
 }
+.city-option-wrap {
+    position: absolute;
+    top: 62px;
+    right: -71px;
+}
 .city-option:not(:last-child)  {
     margin-bottom: 0.25em;
 }
 .disabled {
-    /* display: none; */
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
 }
 li {
     list-style: none;

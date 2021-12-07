@@ -22,16 +22,13 @@ function getWeather () {
 }
 
 function showWeather (data) {
-    console.log(data);
-    document.querySelector('.weather-img').setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+    document.querySelector('.weather-img').setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`);
     document.querySelector('.temperature').textContent = `${Math.floor(data.main.temp)} °C`;
     document.querySelector('.feels-like').textContent = `Feels like: ${Math.floor(data.main['feels_like'])} °C`;
     document.querySelector('.max-t').textContent = `Max temp. ${Math.round(data.main['temp_max'])} °C`;
     document.querySelector('.min-t').textContent = `Min temp. ${Math.floor(data.main['temp_max'])} °C`;
     document.querySelector('.pressure').textContent = `Pressure ${Math.floor(data.main.pressure)} hPa`;
     document.querySelector('.humidity').textContent = `Humidity ${Math.floor(data.main.humidity)} %`;
-
-
 }
 
 
