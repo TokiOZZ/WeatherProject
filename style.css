@@ -1,6 +1,7 @@
 body {
     font-family: 'Patrick Hand', cursive;
     font-size: 5vh;
+    background-image: url(bg-main.jpg);
 }
 .container {
     max-width: 1200px;

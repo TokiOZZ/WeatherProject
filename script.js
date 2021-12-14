@@ -46,15 +46,6 @@ document.querySelector('#city').addEventListener('click', activateCityList);
 
 function getCityList () {
 
-// Create inside 'custom select'
-
-    // for (let key in param.cities) {
-    //     let citySelect = document.querySelector('.city-select__custom-select');
-    //     let cityOption = citySelect.appendChild(createElem('div', 'city-option', param.cities[key], key));
-    //     cityOption.classList.add('disabled');
-    // }
-
-// Create after 'custom select'
     let cityOptionWrap = document.createElement('div');
     cityOptionWrap.classList.add('city-option-wrap');
     document.querySelector('.city-select').appendChild(cityOptionWrap);
@@ -66,7 +57,7 @@ function getCityList () {
 
 }
 
-document.querySelector('.city-option-wrap').addEventListener('click', (event) => {
+document.querySelector('.city-option-wrap').addEventListener('click', event => {
     const cityCheckedName = event.target.textContent;
     document.querySelector('.city-select__custom-select').textContent = cityCheckedName;
     const cityCheckedId = event.target.getAttribute('value');
